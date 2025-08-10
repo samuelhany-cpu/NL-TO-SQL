@@ -1,0 +1,19 @@
+NLP to SQL Parser Test Summary Report
+==================================================
+
+Test Execution Date: 2025-08-10 18:26:22
+Total Tests: 20
+Passed Tests: 0
+Failed Tests: 20
+Success Rate: 0.0%
+
+Results by Status:
+--------------------
+ERROR: 20 tests
+  - Simple SELECT all: Show me all products...
+  - SELECT with WHERE condition: Show me all users where age is greater than 25...
+  - SELECT specific columns: Show me the name and email from users...
+  - SELECT with ORDER BY: Show me all products ordered by price...
+  - SELECT with LIMIT: Show me the first 10 users...
+  ... and 15 more
+

@@ -1,0 +1,711 @@
+{
+  "summary": {
+    "total_tests": 20,
+    "passed_tests": 0,
+    "failed_tests": 20,
+    "success_rate": 0.0,
+    "timestamp": "2025-08-10T18:28:24.548378"
+  },
+  "test_results": [
+    {
+      "test_name": "Simple SELECT all",
+      "natural_language_query": "Show me all products",
+      "expected_sql": "SELECT * FROM products",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: Show me all products",
+      "execution_time_ms": 0.76,
+      "timestamp": "2025-08-10T18:28:24.518832",
+      "full_parser_result": {
+        "original_query": "Show me all products",
+        "query_parts": [
+          "Show me all products"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me all products"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me all products",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me all products"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "SELECT with WHERE condition",
+      "natural_language_query": "Show me all users where age is greater than 25",
+      "expected_sql": "SELECT * FROM users WHERE age > 25",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: Show me all users where age is greater than 25",
+      "execution_time_ms": 1.03,
+      "timestamp": "2025-08-10T18:28:24.519884",
+      "full_parser_result": {
+        "original_query": "Show me all users where age is greater than 25",
+        "query_parts": [
+          "Show me all users where age is greater than 25"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me all users where age is greater than 25"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me all users where age is greater than 25",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me all users where age is greater than 25"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "SELECT specific columns",
+      "natural_language_query": "Show me the name and email from users",
+      "expected_sql": "SELECT name, email FROM users",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: Show me the name and email from users",
+      "execution_time_ms": 1.01,
+      "timestamp": "2025-08-10T18:28:24.520908",
+      "full_parser_result": {
+        "original_query": "Show me the name and email from users",
+        "query_parts": [
+          "Show me the name and email from users"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me the name and email from users"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me the name and email from users",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me the name and email from users"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "SELECT with ORDER BY",
+      "natural_language_query": "Show me all products ordered by price",
+      "expected_sql": "SELECT * FROM products ORDER BY price",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: Show me all products ordered by price",
+      "execution_time_ms": 1.2,
+      "timestamp": "2025-08-10T18:28:24.522127",
+      "full_parser_result": {
+        "original_query": "Show me all products ordered by price",
+        "query_parts": [
+          "Show me all products ordered by price"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me all products ordered by price"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me all products ordered by price",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me all products ordered by price"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "SELECT with LIMIT",
+      "natural_language_query": "Show me the first 10 users",
+      "expected_sql": "SELECT * FROM users LIMIT 10",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: Show me the first 10 users",
+      "execution_time_ms": 0.69,
+      "timestamp": "2025-08-10T18:28:24.522836",
+      "full_parser_result": {
+        "original_query": "Show me the first 10 users",
+        "query_parts": [
+          "Show me the first 10 users"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me the first 10 users"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me the first 10 users",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me the first 10 users"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "JOIN query",
+      "natural_language_query": "Show me all orders with customer names",
+      "expected_sql": "SELECT orders.*, customers.name FROM orders JOIN customers ON orders.customer_id = customers.id",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: Show me all orders with customer names",
+      "execution_time_ms": 1.18,
+      "timestamp": "2025-08-10T18:28:24.524186",
+      "full_parser_result": {
+        "original_query": "Show me all orders with customer names",
+        "query_parts": [
+          "Show me all orders with customer names"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me all orders with customer names"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me all orders with customer names",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me all orders with customer names"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "GROUP BY with COUNT",
+      "natural_language_query": "Count the number of orders per customer",
+      "expected_sql": "SELECT customer_id, COUNT(*) FROM orders GROUP BY customer_id",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: Count the number of orders per customer",
+      "execution_time_ms": 1.41,
+      "timestamp": "2025-08-10T18:28:24.525617",
+      "full_parser_result": {
+        "original_query": "Count the number of orders per customer",
+        "query_parts": [
+          "Count the number of orders per customer"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Count the number of orders per customer"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Count the number of orders per customer",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Count the number of orders per customer"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Multiple WHERE conditions",
+      "natural_language_query": "Show me products where price is between 100 and 500 and category is electronics",
+      "expected_sql": "SELECT * FROM products WHERE price BETWEEN 100 AND 500 AND category = \"electronics\"",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: Show me products where price is between 100 and 500 and category is electronics",
+      "execution_time_ms": 1.57,
+      "timestamp": "2025-08-10T18:28:24.527204",
+      "full_parser_result": {
+        "original_query": "Show me products where price is between 100 and 500 and category is electronics",
+        "query_parts": [
+          "Show me products where price is between 100 and 500 and category is electronics"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me products where price is between 100 and 500 and category is electronics"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me products where price is between 100 and 500 and category is electronics",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me products where price is between 100 and 500 and category is electronics"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Aggregate functions",
+      "natural_language_query": "What is the average price of all products",
+      "expected_sql": "SELECT AVG(price) FROM products",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: What is the average price of all products",
+      "execution_time_ms": 1.13,
+      "timestamp": "2025-08-10T18:28:24.528349",
+      "full_parser_result": {
+        "original_query": "What is the average price of all products",
+        "query_parts": [
+          "What is the average price of all products"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: What is the average price of all products"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "What is the average price of all products",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: What is the average price of all products"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "HAVING clause",
+      "natural_language_query": "Show me customers who have more than 5 orders",
+      "expected_sql": "SELECT customer_id FROM orders GROUP BY customer_id HAVING COUNT(*) > 5",
+      "generated_sql": "None",
+      "status": "FAIL",
+      "error_message": "Could not parse query: Show me customers who have more than 5 orders",
+      "execution_time_ms": 1.44,
+      "timestamp": "2025-08-10T18:28:24.529809",
+      "full_parser_result": {
+        "original_query": "Show me customers who have more than 5 orders",
+        "query_parts": [
+          "Show me customers who have more than 5 orders"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me customers who have more than 5 orders"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me customers who have more than 5 orders",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me customers who have more than 5 orders"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Empty query",
+      "natural_language_query": "",
+      "expected_sql": "Error or None",
+      "generated_sql": "None",
+      "status": "NO_OUTPUT",
+      "error_message": "Could not parse query: ",
+      "execution_time_ms": 0.11,
+      "timestamp": "2025-08-10T18:28:24.530039",
+      "full_parser_result": {
+        "original_query": "",
+        "query_parts": [
+          ""
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: "
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: "
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Non-SQL related query",
+      "natural_language_query": "What is the weather today?",
+      "expected_sql": "Error or None",
+      "generated_sql": "None",
+      "status": "NO_OUTPUT",
+      "error_message": "Could not parse query: What is the weather today?",
+      "execution_time_ms": 1.31,
+      "timestamp": "2025-08-10T18:28:24.531377",
+      "full_parser_result": {
+        "original_query": "What is the weather today?",
+        "query_parts": [
+          "What is the weather today?"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: What is the weather today?"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "What is the weather today?",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: What is the weather today?"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Ambiguous query",
+      "natural_language_query": "Show me stuff",
+      "expected_sql": "Error or None",
+      "generated_sql": "None",
+      "status": "NO_OUTPUT",
+      "error_message": "Could not parse query: Show me stuff",
+      "execution_time_ms": 0.71,
+      "timestamp": "2025-08-10T18:28:24.532115",
+      "full_parser_result": {
+        "original_query": "Show me stuff",
+        "query_parts": [
+          "Show me stuff"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me stuff"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me stuff",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me stuff"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Very long query",
+      "natural_language_query": "Show me all the products that have a very long description and are available in multiple colors and have been ordered by customers who live in different countries and have made purchases in the last year",
+      "expected_sql": "Complex SELECT statement",
+      "generated_sql": "None",
+      "status": "NO_OUTPUT",
+      "error_message": "Could not parse query: Show me all the products that have a very long description and are available in multiple colors and have been ordered by customers who live in different countries and have made purchases in the last year",
+      "execution_time_ms": 4.27,
+      "timestamp": "2025-08-10T18:28:24.536412",
+      "full_parser_result": {
+        "original_query": "Show me all the products that have a very long description and are available in multiple colors and have been ordered by customers who live in different countries and have made purchases in the last year",
+        "query_parts": [
+          "Show me all the products that have a very long description and are available in multiple colors and have been ordered by customers who live in different countries and have made purchases in the last year"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me all the products that have a very long description and are available in multiple colors and have been ordered by customers who live in different countries and have made purchases in the last year"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me all the products that have a very long description and are available in multiple colors and have been ordered by customers who live in different countries and have made purchases in the last year",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me all the products that have a very long description and are available in multiple colors and have been ordered by customers who live in different countries and have made purchases in the last year"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "SQL injection attempt",
+      "natural_language_query": "Show me all users; DROP TABLE users;",
+      "expected_sql": "Safe handling without injection",
+      "generated_sql": "None",
+      "status": "NO_OUTPUT",
+      "error_message": "Could not parse query: Show me all users; DROP TABLE users;",
+      "execution_time_ms": 1.26,
+      "timestamp": "2025-08-10T18:28:24.537707",
+      "full_parser_result": {
+        "original_query": "Show me all users; DROP TABLE users;",
+        "query_parts": [
+          "Show me all users; DROP TABLE users;"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me all users; DROP TABLE users;"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me all users; DROP TABLE users;",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me all users; DROP TABLE users;"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Sales report",
+      "natural_language_query": "What are the total sales for each product this month?",
+      "expected_sql": "SELECT product_id, SUM(amount) FROM sales WHERE month = CURRENT_MONTH GROUP BY product_id",
+      "generated_sql": "None",
+      "status": "INSUFFICIENT",
+      "error_message": "Could not parse query: What are the total sales for each product this month?",
+      "execution_time_ms": 1.57,
+      "timestamp": "2025-08-10T18:28:24.539436",
+      "full_parser_result": {
+        "original_query": "What are the total sales for each product this month?",
+        "query_parts": [
+          "What are the total sales for each product this month?"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: What are the total sales for each product this month?"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "What are the total sales for each product this month?",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: What are the total sales for each product this month?"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Customer analysis",
+      "natural_language_query": "Which customers have spent more than 1000 dollars?",
+      "expected_sql": "SELECT customer_id FROM orders GROUP BY customer_id HAVING SUM(total) > 1000",
+      "generated_sql": "None",
+      "status": "INSUFFICIENT",
+      "error_message": "Could not parse query: Which customers have spent more than 1000 dollars?",
+      "execution_time_ms": 2.32,
+      "timestamp": "2025-08-10T18:28:24.541808",
+      "full_parser_result": {
+        "original_query": "Which customers have spent more than 1000 dollars?",
+        "query_parts": [
+          "Which customers have spent more than 1000 dollars?"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Which customers have spent more than 1000 dollars?"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Which customers have spent more than 1000 dollars?",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Which customers have spent more than 1000 dollars?"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Inventory check",
+      "natural_language_query": "Show me products that are out of stock",
+      "expected_sql": "SELECT * FROM products WHERE stock = 0 OR stock IS NULL",
+      "generated_sql": "None",
+      "status": "INSUFFICIENT",
+      "error_message": "Could not parse query: Show me products that are out of stock",
+      "execution_time_ms": 0.96,
+      "timestamp": "2025-08-10T18:28:24.542782",
+      "full_parser_result": {
+        "original_query": "Show me products that are out of stock",
+        "query_parts": [
+          "Show me products that are out of stock"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me products that are out of stock"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me products that are out of stock",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me products that are out of stock"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Top performers",
+      "natural_language_query": "Who are the top 5 customers by total purchase amount?",
+      "expected_sql": "SELECT customer_id, SUM(total) FROM orders GROUP BY customer_id ORDER BY SUM(total) DESC LIMIT 5",
+      "generated_sql": "None",
+      "status": "INSUFFICIENT",
+      "error_message": "Could not parse query: Who are the top 5 customers by total purchase amount?",
+      "execution_time_ms": 1.18,
+      "timestamp": "2025-08-10T18:28:24.543977",
+      "full_parser_result": {
+        "original_query": "Who are the top 5 customers by total purchase amount?",
+        "query_parts": [
+          "Who are the top 5 customers by total purchase amount?"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Who are the top 5 customers by total purchase amount?"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Who are the top 5 customers by total purchase amount?",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Who are the top 5 customers by total purchase amount?"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Date range query",
+      "natural_language_query": "Show me all orders from last week",
+      "expected_sql": "SELECT * FROM orders WHERE order_date >= DATE_SUB(NOW(), INTERVAL 1 WEEK)",
+      "generated_sql": "None",
+      "status": "INSUFFICIENT",
+      "error_message": "Could not parse query: Show me all orders from last week",
+      "execution_time_ms": 0.88,
+      "timestamp": "2025-08-10T18:28:24.544871",
+      "full_parser_result": {
+        "original_query": "Show me all orders from last week",
+        "query_parts": [
+          "Show me all orders from last week"
+        ],
+        "corrections": {},
+        "asts": [],
+        "sql_queries": [],
+        "execution_results": [],
+        "errors": [
+          "Could not parse query: Show me all orders from last week"
+        ],
+        "success": false,
+        "parts": [
+          {
+            "query_text": "Show me all orders from last week",
+            "ast": null,
+            "corrected_query": null,
+            "suggestions": {},
+            "sql": null,
+            "execution_result": null,
+            "error": "Could not parse query: Show me all orders from last week"
+          }
+        ]
+      }
+    }
+  ]
+}

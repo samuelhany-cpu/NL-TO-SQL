@@ -1,0 +1,21 @@
+test_name,natural_language_query,expected_sql,generated_sql,status,error_message,execution_time_ms,timestamp
+Simple SELECT all,Show me all products,SELECT * FROM products,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.325951
+SELECT with WHERE condition,Show me all users where age is greater than 25,SELECT * FROM users WHERE age > 25,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.325966
+SELECT specific columns,Show me the name and email from users,"SELECT name, email FROM users",Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.325972
+SELECT with ORDER BY,Show me all products ordered by price,SELECT * FROM products ORDER BY price,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.325976
+SELECT with LIMIT,Show me the first 10 users,SELECT * FROM users LIMIT 10,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.325980
+JOIN query,Show me all orders with customer names,"SELECT orders.*, customers.name FROM orders JOIN customers ON orders.customer_id = customers.id",Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326041
+GROUP BY with COUNT,Count the number of orders per customer,"SELECT customer_id, COUNT(*) FROM orders GROUP BY customer_id",Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326047
+Multiple WHERE conditions,Show me products where price is between 100 and 500 and category is electronics,"SELECT * FROM products WHERE price BETWEEN 100 AND 500 AND category = ""electronics""",Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326051
+Aggregate functions,What is the average price of all products,SELECT AVG(price) FROM products,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326054
+HAVING clause,Show me customers who have more than 5 orders,SELECT customer_id FROM orders GROUP BY customer_id HAVING COUNT(*) > 5,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326058
+Empty query,,Error or None,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326359
+Non-SQL related query,What is the weather today?,Error or None,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326369
+Ambiguous query,Show me stuff,Error or None,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326375
+Very long query,Show me all the products that have a very long description and are available in multiple colors and have been ordered by customers who live in different countries and have made purchases in the last year,Complex SELECT statement,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326378
+SQL injection attempt,Show me all users; DROP TABLE users;,Safe handling without injection,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326382
+Sales report,What are the total sales for each product this month?,"SELECT product_id, SUM(amount) FROM sales WHERE month = CURRENT_MONTH GROUP BY product_id",Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326454
+Customer analysis,Which customers have spent more than 1000 dollars?,SELECT customer_id FROM orders GROUP BY customer_id HAVING SUM(total) > 1000,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326460
+Inventory check,Show me products that are out of stock,SELECT * FROM products WHERE stock = 0 OR stock IS NULL,Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326464
+Top performers,Who are the top 5 customers by total purchase amount?,"SELECT customer_id, SUM(total) FROM orders GROUP BY customer_id ORDER BY SUM(total) DESC LIMIT 5",Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326468
+Date range query,Show me all orders from last week,"SELECT * FROM orders WHERE order_date >= DATE_SUB(NOW(), INTERVAL 1 WEEK)",Error,ERROR,'NLToSQLParser' object has no attribute 'parse',0.0,2025-08-10T18:26:22.326471

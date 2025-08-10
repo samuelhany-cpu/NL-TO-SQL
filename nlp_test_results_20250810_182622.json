@@ -1,0 +1,211 @@
+{
+  "summary": {
+    "total_tests": 20,
+    "passed_tests": 0,
+    "failed_tests": 20,
+    "success_rate": 0.0,
+    "timestamp": "2025-08-10T18:26:22.328443"
+  },
+  "test_results": [
+    {
+      "test_name": "Simple SELECT all",
+      "natural_language_query": "Show me all products",
+      "expected_sql": "SELECT * FROM products",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.325951"
+    },
+    {
+      "test_name": "SELECT with WHERE condition",
+      "natural_language_query": "Show me all users where age is greater than 25",
+      "expected_sql": "SELECT * FROM users WHERE age > 25",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.325966"
+    },
+    {
+      "test_name": "SELECT specific columns",
+      "natural_language_query": "Show me the name and email from users",
+      "expected_sql": "SELECT name, email FROM users",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.325972"
+    },
+    {
+      "test_name": "SELECT with ORDER BY",
+      "natural_language_query": "Show me all products ordered by price",
+      "expected_sql": "SELECT * FROM products ORDER BY price",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.325976"
+    },
+    {
+      "test_name": "SELECT with LIMIT",
+      "natural_language_query": "Show me the first 10 users",
+      "expected_sql": "SELECT * FROM users LIMIT 10",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.325980"
+    },
+    {
+      "test_name": "JOIN query",
+      "natural_language_query": "Show me all orders with customer names",
+      "expected_sql": "SELECT orders.*, customers.name FROM orders JOIN customers ON orders.customer_id = customers.id",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326041"
+    },
+    {
+      "test_name": "GROUP BY with COUNT",
+      "natural_language_query": "Count the number of orders per customer",
+      "expected_sql": "SELECT customer_id, COUNT(*) FROM orders GROUP BY customer_id",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326047"
+    },
+    {
+      "test_name": "Multiple WHERE conditions",
+      "natural_language_query": "Show me products where price is between 100 and 500 and category is electronics",
+      "expected_sql": "SELECT * FROM products WHERE price BETWEEN 100 AND 500 AND category = \"electronics\"",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326051"
+    },
+    {
+      "test_name": "Aggregate functions",
+      "natural_language_query": "What is the average price of all products",
+      "expected_sql": "SELECT AVG(price) FROM products",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326054"
+    },
+    {
+      "test_name": "HAVING clause",
+      "natural_language_query": "Show me customers who have more than 5 orders",
+      "expected_sql": "SELECT customer_id FROM orders GROUP BY customer_id HAVING COUNT(*) > 5",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326058"
+    },
+    {
+      "test_name": "Empty query",
+      "natural_language_query": "",
+      "expected_sql": "Error or None",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326359"
+    },
+    {
+      "test_name": "Non-SQL related query",
+      "natural_language_query": "What is the weather today?",
+      "expected_sql": "Error or None",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326369"
+    },
+    {
+      "test_name": "Ambiguous query",
+      "natural_language_query": "Show me stuff",
+      "expected_sql": "Error or None",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326375"
+    },
+    {
+      "test_name": "Very long query",
+      "natural_language_query": "Show me all the products that have a very long description and are available in multiple colors and have been ordered by customers who live in different countries and have made purchases in the last year",
+      "expected_sql": "Complex SELECT statement",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326378"
+    },
+    {
+      "test_name": "SQL injection attempt",
+      "natural_language_query": "Show me all users; DROP TABLE users;",
+      "expected_sql": "Safe handling without injection",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326382"
+    },
+    {
+      "test_name": "Sales report",
+      "natural_language_query": "What are the total sales for each product this month?",
+      "expected_sql": "SELECT product_id, SUM(amount) FROM sales WHERE month = CURRENT_MONTH GROUP BY product_id",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326454"
+    },
+    {
+      "test_name": "Customer analysis",
+      "natural_language_query": "Which customers have spent more than 1000 dollars?",
+      "expected_sql": "SELECT customer_id FROM orders GROUP BY customer_id HAVING SUM(total) > 1000",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326460"
+    },
+    {
+      "test_name": "Inventory check",
+      "natural_language_query": "Show me products that are out of stock",
+      "expected_sql": "SELECT * FROM products WHERE stock = 0 OR stock IS NULL",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326464"
+    },
+    {
+      "test_name": "Top performers",
+      "natural_language_query": "Who are the top 5 customers by total purchase amount?",
+      "expected_sql": "SELECT customer_id, SUM(total) FROM orders GROUP BY customer_id ORDER BY SUM(total) DESC LIMIT 5",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326468"
+    },
+    {
+      "test_name": "Date range query",
+      "natural_language_query": "Show me all orders from last week",
+      "expected_sql": "SELECT * FROM orders WHERE order_date >= DATE_SUB(NOW(), INTERVAL 1 WEEK)",
+      "generated_sql": "Error",
+      "status": "ERROR",
+      "error_message": "'NLToSQLParser' object has no attribute 'parse'",
+      "execution_time_ms": 0.0,
+      "timestamp": "2025-08-10T18:26:22.326471"
+    }
+  ]
+}
