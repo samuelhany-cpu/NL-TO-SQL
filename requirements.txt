@@ -1,13 +1,21 @@
 # FastAPI NL-to-SQL Service Requirements
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.0
-python-multipart==0.0.6
-matplotlib==3.8.2
-networkx==3.2.1
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+pydantic==2.11.7
+python-multipart==0.0.20
+python-dotenv==1.1.1
+
+# Core ML/Parsing dependencies
+matplotlib==3.10.5
+networkx==3.5
 ply==3.11
-sqlite3
-difflib
+
+# Additional dependencies
 requests==2.31.0
-python-dotenv==1.0.0
-cors==1.0.1
+PyYAML==6.0.2
+click==8.2.1
+h11==0.16.0
+starlette==0.47.2
+anyio==4.10.0
+sniffio==1.3.1
+idna==3.10
